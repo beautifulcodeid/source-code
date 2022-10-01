@@ -1,44 +1,21 @@
-function clickButton(){
-    const upin = document.querySelectorAll('.upin');
-    const ipin = document.querySelectorAll('.ipin');
-    const loveAnimation = document.querySelectorAll('.love-animation');
+const hexArr = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
 
-    const button = document.querySelector('.btn');
-    const borderDiv = document.querySelector('.border');
+const bgColor = document.getElementById('bg-color');
+const btn = document.getElementById('button-hex');
+const text = document.getElementById('hex-text');
 
-    upin.forEach((nodelist) => {
-        nodelist.classList.toggle('transition-out');
-    });
+btn.addEventListener('click', function(){
 
-    ipin.forEach((nodelist) => {
-        nodelist.classList.toggle('transition-out');
-    });
+    let newHex = '#';
 
-    button.classList.toggle('transition-out');
+    for(let i = 0; i < 6; i++){
+        const idx = Math.floor(Math.random()* hexArr.length);
 
-    setTimeout(() => {
-        upin.forEach((nodelist) => {
-            nodelist.classList.toggle('hide');
-            nodelist.classList.toggle('transition-out');
-        });
-    
-        ipin.forEach((nodelist) => {
-            nodelist.classList.toggle('hide');
-            nodelist.classList.toggle('transition-out');
-        });
+        newHex += hexArr[idx];
+    }
 
-        button.classList.toggle('hide');
-        borderDiv.classList.toggle('border-t-red-soft');
-        borderDiv.classList.toggle('px-5');
-        borderDiv.classList.toggle('py-2');
-        button.classList.toggle('transition-out');
+    text.textContent = newHex;
 
+    bgColor.style.backgroundColor = newHex;
 
-        loveAnimation.forEach((nodelist) => {
-            nodelist.classList.toggle('hide');
-            nodelist.classList.toggle('love');
-        });
-    }, 1500)
-
-    
-}
+});
