@@ -1,0 +1,370 @@
+* {
+    padding: 0;   
+    margin: 0;
+}
+
+.bg-blue-dark {
+    background-color: #0F172A;
+}
+
+.bg-blue-light {
+    background-color: #287CA7;
+}
+
+.bg-white {
+    background-color: #FEFFFF;
+}
+
+.bg-sky-light {
+    background-color: #87CEF1;
+}
+
+.color-blue-light {
+    color: #287CA7;
+}
+
+.full-height {
+    min-height: 100vh;
+}
+
+.width-50 {
+    min-width: 50%;
+}
+
+.width-full {
+    min-width: 100vw;
+}
+
+.container-center {
+    position: relative;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.below-center {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(0%, 40%);
+}
+
+.center-child {
+    transform: translate(0%, 0%);
+}
+
+.center-child-up {
+    transform: translate(-50%, -120%);
+}
+
+.center-child-center {
+    transform: translate(-50%, -30%);
+}
+
+.center-child-down {
+    transform: translate(-50%, 60%);
+}
+
+.font-m {
+    font-size: 56px;
+}
+
+.font-l {
+    font-size: 80px;
+}
+
+.font-xl {
+    font-size: 108px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.animation-center-to-down {
+    animation-name: centertodown;
+    animation-duration: 1s;
+    animation-delay: 3.5s;
+}
+
+.animation-up-to-center {
+    animation-name: uptocenter;
+    animation-duration: 1s;
+}
+
+.animation-up-to-center-first {
+    animation-name: uptocenter-first;
+    animation-duration: 1s;
+}
+
+.animation-up-to-center-middle {
+    animation-name: uptocenter-center;
+    animation-duration: 1s;
+}
+
+.animation-up-to-center-last {
+    animation-name: uptocenter-last;
+    animation-duration: 1s;
+}
+
+.animation-fadein {
+    animation-name: fadein;
+    animation-duration: 1s;
+}
+
+.animation-fadeout {
+    animation-name: fadeout;
+    animation-duration: 1s;
+}
+
+.progress-bar {
+    position: relative;
+    height: 10px;
+    width: 100%;
+    border: 3px solid #287CA7;
+    border-radius: 15px;
+}
+
+.progress-color {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    border-radius: 15px;
+    animation: loadingbar 3s;
+}
+
+.progress-color-zero-width {
+    width: 0%;
+}
+
+.mt-12 {
+    margin-top: 12px;
+}
+
+.hide {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.btn {
+    padding: 8px 32px;
+    border-radius: 24px;
+    background-color: #87CEF1;
+    color: #287CA7;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+.heart {
+    background-color: #a7287c;
+    display: inline-block;
+    height: 32px;
+    margin: 0 24px;
+    position: relative;
+    top: -10;
+    rotate: -45deg;
+    width: 32px;
+    animation: pulse 1s infinite;
+}
+  
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: #a7287c;
+  border-radius: 50%;
+  height: 32px;
+  position: absolute;
+  width: 32px;
+}
+
+.heart:before {
+  top: -15px;
+  left: 0;
+}
+
+.heart:after {
+  left: 15px;
+  top: 0;
+}
+
+.test {
+    border: 1px solid red;
+}
+
+@keyframes pulse {
+    0% { 
+        transform: scale(1)
+    }
+    50% { 
+        transform: scale(1.3)
+    }
+    100% { 
+        transform: scale(1)
+    }
+}
+
+@keyframes loadingbar {
+    0%{
+      width: 95%;
+    }
+    12.5%{
+        width: 96%;
+    }
+    25%{
+        width: 97%;
+    }
+    37.5%{
+        width: 98%;
+    }
+    50%{
+        width: 98.5%;
+    }
+    62.5%{
+        width: 99%;
+    }
+    75%{
+        width: 99.33%;
+    }
+    87.5%{
+        width: 99.66%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+@keyframes centertodown {
+    from {
+        transform: translate(0%, 0%);
+        opacity: 1;
+    }
+    to {
+        transform: translate(0%, 100%);
+        opacity: 0;
+    }
+}
+
+@keyframes uptocenter {
+    from {
+        transform: translate(0%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0%, 0%);
+        opacity: 1;
+    }
+}
+
+@keyframes uptocenter-first {
+    from {
+        transform: translate(-50%, -180%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -120%);
+        opacity: 1;
+    }
+}
+
+@keyframes uptocenter-center {
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -30%);
+        opacity: 1;
+    }
+}
+
+@keyframes uptocenter-last {
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 60%);
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .font-m {
+        font-size: 12px;
+    }
+
+    .font-l {
+        font-size: 24px;
+    }
+
+    .heart {
+        background-color: #a7287c;
+        display: inline-block;
+        height: 12px;
+        margin: 0 12px;
+        position: relative;
+        top: 0;
+        rotate: -45deg;
+        width: 12px;
+        animation: pulse 1s infinite;
+    }
+      
+    .heart:before,
+    .heart:after {
+      content: "";
+      background-color: #a7287c;
+      border-radius: 50%;
+      height: 12px;
+      position: absolute;
+      width: 12px;
+    }
+    
+    .heart:before {
+      top: -6px;
+      left: 0;
+    }
+    
+    .heart:after {
+      left: 6px;
+      top: 0;
+    }
+}
